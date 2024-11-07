@@ -1,6 +1,5 @@
 const env = require('./env.js');
-const Sequelize = require('sequelize'); 
-const { pool } = env; 
+const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize(env.database, env.username, env.password, {
     host: env.host,
@@ -11,7 +10,7 @@ const sequelize = new Sequelize(env.database, env.username, env.password, {
             rejectUnauthorized: false
         }
     },
-    operatorAliases: false, 
+    operatorsAliases: false,
     pool: {
         max: env.pool.max,
         min: env.pool.min,
@@ -22,9 +21,8 @@ const sequelize = new Sequelize(env.database, env.username, env.password, {
 
 const db = {};
 db.Sequelize = Sequelize;
-db.sequelize = sequelize; 
+db.sequelize = sequelize;
 
-db.Empleado = require('../models/empleados.js')(sequelize, Sequelize);
-db.Depto = require('../models/departamento.js')(sequelize, Sequelize);
+db.Juegos = require('../models/juegos.js')(sequelize, Sequelize);
 
 module.exports = db;
