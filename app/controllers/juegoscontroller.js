@@ -4,7 +4,7 @@ const Juegos = db.Juegos;
 exports.create = (req, res) => {
     let juego = {};
 
-    // Validaciones de los datos requeridos
+
     if (!req.body.nombre_juego || !req.body.genero || !req.body.plataforma) {
         return res.status(400).json({
             message: "Faltan datos requeridos (nombre_juego, genero, plataforma)"
@@ -40,7 +40,7 @@ exports.create = (req, res) => {
 exports.retrieveAllJuegos = (req, res) => {
     Juegos.findAll({
         order: [
-            ['nombre_juego', 'ASC'], // Ordenar por 'nombre_juego' de manera ascendente
+            ['nombre_juego', 'ASC'],
         ]
     })
     .then(juegos => {
