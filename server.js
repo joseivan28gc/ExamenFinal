@@ -20,8 +20,8 @@ db.sequelize.sync({ force: false }).then(() => {
   console.log('Resync with { force: false }');
 });
 
-app.use('/', empleadoRouter); 
-app.use('/', departamentoRouter);
+app.use('/', juegosRouter);  
+
 
 app.get("/", (req, res) => {
   res.json({ message: "Bienvenidos UMG" });
