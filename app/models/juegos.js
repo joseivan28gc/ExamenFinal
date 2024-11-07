@@ -23,7 +23,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.FLOAT
         },
         disponibilidad: {
-            type: Sequelize.STRING
+            type: Sequelize.BOOLEAN
         },
         fecha_alquiler:{
             type: Sequelize.DATE
